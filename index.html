@@ -1,21 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, 
+                   initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
 <title>Lucas' website</title>
 </head>
 <body>
 
-<h1>Welcome to Lucas' website!</h1>
-<p>Hello, My name is Lucas. I am 14 and I enjoy playing basketball.</p>
-<img src="my-website.jpeg" width="300">
-<p>Why I love to play basketball:</p>
-<ol>
-    <li>It is fun</li>
-    <li>I get to play with friends</li>
-    <li>It is my passion</li>
-</ol>
-<a href="https://www.youtube.com/watch?v=eYofzinKpAA">Click here to watch basketball</a>
-<h2>I also have a sister in grade 2</h2>
-<p>Her name is jolie.</p>
+
+    <html>
+        <head>
+        <style>
+        .myDiv {   
+          text-align: center;
+        }
+        </style>
+        </head>
+        <body>
+        
+        
+        <div class="myDiv">
+        <h1>Welcome to Lucas' website!</h1>
+        <p>Hello, My name is Lucas. I am 14 and I enjoy playing basketball.</p>
+        <img src="my-website.jpeg" width="300">
+        <p>Why I love to play basketball:</p>
+        <ol>
+            <p>It is fun</p>
+            <p>I get to play with friends</p>
+            <p>It is my passion</p>
+        </ol>
+        <a href="https://www.youtube.com/watch?v=eYofzinKpAA">Click here to watch basketball</a>
+        <h2>I also have a sister in grade 2</h2>
+        <p>Her name is jolie.</p>
+        </div>
+  
+
+
+<div class="wrapper" >
+    <div class="container-calendar">
+        <div id="left">
+            <h1>Team Calendar</h1>
+            <div id="event-section">
+                <h3>Add Event</h3>
+                <input type="date" id="eventDate">
+                <input type="text"
+                    id="eventTitle"
+                    placeholder="Event Title">
+                <input type="text"
+                    id="eventDescription"
+                    placeholder="Event Description">
+                <button id="addEvent" onclick="addEvent()">
+                    Add
+                </button>
+            </div>
+            <div id="reminder-section">
+                <h3>Reminders</h3>
+                <!-- List to display reminders -->
+                <ul id="reminderList">
+                    <li data-event-id="1">
+                        <strong>Event Title</strong>
+                        - Event Description on Event Date
+                        <button class="delete-event"
+                            onclick="deleteEvent(1)">
+                            Delete
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="right">
+            <h3 id="monthAndYear"></h3>
+            <div class="button-container-calendar">
+                <button id="previous"
+                        onclick="previous()">
+                      ‹
+                  </button>
+                <button id="next"
+                        onclick="next()">
+                      ›
+                  </button>
+            </div>
+            <table class="table-calendar"
+                   id="calendar"
+                   data-lang="en">
+                <thead id="thead-month"></thead>
+                <!-- Table body for displaying the calendar -->
+                <tbody id="calendar-body"></tbody>
+            </table>
+            <div class="footer-container-calendar">
+                <label for="month">Jump To: </label>
+                <!-- Dropdowns to select a specific month and year -->
+                <select id="month" onchange="jump()">
+                    <option value=0>Jan</option>
+                    <option value=1>Feb</option>
+                    <option value=2>Mar</option>
+                    <option value=3>Apr</option>
+                    <option value=4>May</option>
+                    <option value=5>Jun</option>
+                    <option value=6>Jul</option>
+                    <option value=7>Aug</option>
+                    <option value=8>Sep</option>
+                    <option value=9>Oct</option>
+                    <option value=10>Nov</option>
+                    <option value=11>Dec</option>
+                </select>
+                <!-- Dropdown to select a specific year -->
+                <select id="year" onchange="jump()"></select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>
